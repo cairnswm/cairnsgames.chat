@@ -21,6 +21,7 @@ function ChatDialog({
   apikey,
   buttonStyle = { position: "absolute", bottom: "50px", right: "50px" },
   buttonVariant = "primary",
+  variant = "primary"
 }) {
   const [show, setShow] = useState(true);
   const [msg, setMsg] = useState("");
@@ -89,6 +90,8 @@ function ChatDialog({
         show={show}
         onHide={handleClose}
         style={{ margin: "50px", borderRadius: "20px" }}
+        variant={variant}
+        className={"chat-header"}
       >
         <Offcanvas.Header
           closeButton
@@ -96,16 +99,15 @@ function ChatDialog({
         >
           <Offcanvas.Title>Offcanvas</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
-          <div>
+        <Offcanvas.Body
+          className={"chat-body"}>
             {shortChatMessages.map((message) => (
               <Row key={message.id}>
                 <Col xs={3}>{message.role}</Col>
                 <Col>{message.content}</Col>
               </Row>
             ))}
-            <div ref={chatBottom}><br/></div>
-          </div>
+            <div ref={chatBottom}></div>
         </Offcanvas.Body>
         <Offcanvas.Header style={{ borderTop: "1px solid grey" }}>
           <InputGroup>
@@ -117,7 +119,7 @@ function ChatDialog({
               onKeyUp={handleKeys}
             />
             {!loading && (
-              <Button variant="primary" onClick={send}>
+              <Button variant={variant} onClick={send}>
                 <Send />
               </Button>
             )}
