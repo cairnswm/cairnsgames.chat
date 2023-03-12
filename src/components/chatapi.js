@@ -1,5 +1,5 @@
 export const getChat = (apikey, chatMessages) => {
-    const OPENAI_API_KEY = apikey || "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"; // replace with your actual API key
+    const OPENAI_API_KEY = apikey || "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"; // replace with your actual API key
   
     const requestData = {
       model: "gpt-3.5-turbo",
