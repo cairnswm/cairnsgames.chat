@@ -45,6 +45,7 @@ Contact the teacher directly to arrange lessons.`);
                 as="textarea"
                 placeholder="System Information"
                 value={system}
+                rows={10}
                 onChange={(e) => setSystem(e.target.value)}
               />
             </Form.Group>
