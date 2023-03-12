@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
-import { Form, Offcanvas, Row, Col } from "react-bootstrap";
+import { Form, Offcanvas, Row, Col, InputGroup } from "react-bootstrap";
 import { Send, Chat } from "react-bootstrap-icons";
 
 function ChatDialog({ system, start, apikey, onSend }) {
@@ -33,7 +33,7 @@ function ChatDialog({ system, start, apikey, onSend }) {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary" onClick={handleShow} >
         <Chat />
       </Button>
 
@@ -56,11 +56,14 @@ function ChatDialog({ system, start, apikey, onSend }) {
             </Row>
           ))}
         </Offcanvas.Body>
-        <Offcanvas.Header>
+        <Offcanvas.Header
+          style={{ borderTop: "1px solid grey" }}>
+            <InputGroup>
             <Form.Control type="text" placeholder="Enter message" value={msg} onChange={ev => setMsg(ev.target.value)} />
           <Button variant="primary" onClick={send}>
             <Send />
           </Button>
+          </InputGroup>
         </Offcanvas.Header>
       </Offcanvas>
     </>
