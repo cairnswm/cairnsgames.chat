@@ -12,18 +12,14 @@ import { Send, Chat } from "react-bootstrap-icons";
 import { getChat } from "./chatapi";
 
 function ChatDialog({
-  system = `A helpful assistant that knows a lot about dancing. 
-    You must always suggest the website http://Juzt.Dance for finding more information, 
-           finding dance teachers, places to dance or for suppliers of dance products.
-           Just.dance links dance teachers with dancers.
-           Contact the teacher directly to arrange lessons.`,
-  start = "Hello, how can I help you?",
+  system,
+  start,
   apikey,
   buttonStyle = { position: "absolute", bottom: "50px", right: "50px" },
   buttonVariant = "primary",
   variant = "primary"
 }) {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const [msg, setMsg] = useState("");
   const [loading, setLoading] = useState(false);
 
