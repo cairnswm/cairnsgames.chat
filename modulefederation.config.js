@@ -4,7 +4,7 @@ module.exports = {
   name: 'chat',
   filename: 'chat.js',
   exposes: {
-    './chat': './src/components/chat.js'
+    './components': './src/components/chat.js'
   },  
   shared: {
     ...deps,

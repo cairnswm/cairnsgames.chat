@@ -11,14 +11,15 @@ import {
 import { Send, Chat } from "react-bootstrap-icons";
 import { getChat } from "./chatapi";
 
-function ChatDialog({
-  system,
-  start,
-  apikey,
-  buttonStyle = { position: "absolute", bottom: "50px", right: "50px" },
-  buttonVariant = "primary",
-  variant = "primary"
-}) {
+export const ChatDialog = (props) => {
+  const {
+    system,
+    start,
+    apikey,
+    buttonStyle = { position: "absolute", bottom: "50px", right: "50px" },
+    buttonVariant = "primary",
+    variant = "primary"
+  } = props;
   const [show, setShow] = useState(false);
   const [msg, setMsg] = useState("");
   const [loading, setLoading] = useState(false);
