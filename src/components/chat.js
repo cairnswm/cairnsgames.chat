@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Button from "react-bootstrap/Button";
 import {
   Form,
@@ -42,7 +42,20 @@ export const ChatDialog = (props) => {
     },
   ]);
 
-  const shortChatMessages = messages.filter((c) => c.role !== "system");
+  useEffect(() => {
+    setMessages(    [{
+      id: 0,
+      role: "system",
+      content: system,
+    },
+    {
+      id: 1,
+      role: "user",
+      content: start,
+    }]);
+  }, [system]);
+
+  const shortChatMessages = (messages && messages.length > 0) ? messages?.filter((c) => c.role !== "system") : [];
 
   const send = () => {
     setLoading(true);
