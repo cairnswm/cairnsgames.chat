@@ -99,7 +99,7 @@ export const ChatDialog = (props) => {
       <Offcanvas
         show={show}
         onHide={handleClose}
-        style={{ margin: "50px", borderRadius: "20px" }}
+        style={{ margin: "50px", borderRadius: "20px", minWidth: "650px" }}
         variant={variant}
         className={"chat-header"}
       >
