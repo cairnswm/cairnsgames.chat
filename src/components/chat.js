@@ -107,7 +107,7 @@ export const ChatDialog = (props) => {
           closeButton
           style={{ borderBottom: "1px solid grey" }}
         >
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+          <Offcanvas.Title>Lets chat!</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body
           className={"chat-body"}>
