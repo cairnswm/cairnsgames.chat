@@ -86,7 +86,6 @@ export const ChatDialog = (props) => {
   };
 
   const scrollToBottom = () => {
-    console.log("Scroll to bottom");
     chatBottom.current?.scrollIntoView({behavior: 'smooth'});
   };
 
