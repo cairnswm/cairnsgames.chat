@@ -16,7 +16,7 @@ export const ChatDialog = (props) => {
     system,
     start,
     apikey,
-    buttonStyle = { position: "absolute", bottom: "50px", right: "50px" },
+    buttonStyle = { position: "absolute", bottom: "50px", right: "50px", zIndex: "801" },
     buttonVariant = "primary",
     variant = "primary"
   } = props;
